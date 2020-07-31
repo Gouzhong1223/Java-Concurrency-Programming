@@ -21,14 +21,14 @@ public class ThreadGroupEnumerateThreads {
         Thread myThread = new Thread(myGroup, () -> {
             while (true) {
                 try {
-                    TimeUnit.SECONDS.sleep(2);
-//                    System.out.println(Thread.currentThread().getId());
+                    TimeUnit.SECONDS.sleep(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }, "MyThread");
         myThread.start();
+
         TimeUnit.MILLISECONDS.sleep(2);
         ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
         Thread[] threads = new Thread[threadGroup.activeCount()];
